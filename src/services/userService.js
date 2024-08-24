@@ -42,7 +42,7 @@ async function createUser(req, res, next, session) {
   //body.password
 }
 
-async function getUserById(userID) {
+async function getUserById(res, userID) {
   console.log("Getting User");
   try {
     let user = await User.findById(userID);
@@ -54,4 +54,4 @@ async function getUserById(userID) {
     return res.status(500).json(new ApiResponse(500, "Failed to get user"));
   }
 }
-module.exports = { createUser };
+module.exports = { createUser, getUserById };

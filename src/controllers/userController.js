@@ -24,7 +24,7 @@ async function registerUser(req, res, next) {
 
 async function getUserById(req, res, next) {
   console.log("getUserById Controller received Request", req.body, req.params);
-  UserService.getUserById(req.params.id).then((result) => {
+  UserService.getUserById(res, req.params.id).then((result) => {
     console.log("getUserByID controller results", result);
     res.status(result.statusCode).send(result);
   });
