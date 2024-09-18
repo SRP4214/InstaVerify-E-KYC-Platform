@@ -13,8 +13,13 @@ try {
   console.log("Following error occured", error);
 }
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors({ credentials: true, origin: "httpp://localhost:3000" }));
-
+app.use(bodyParser.json());
+const corsOptions = {
+  origin: "http://localhost:3000",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 // Returns middleware that only parses json and only looks at requests where the
 // Content-Type header matches the type option.
 app.use(express.json());
