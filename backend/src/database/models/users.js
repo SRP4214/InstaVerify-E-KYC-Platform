@@ -43,6 +43,11 @@ const userSchema = new mongoose.Schema({
     enum: ["user", "admin"],
     default: "user",
   },
+  contactnumber: {
+    type: Number,
+    required: [true, "Contact number is required"],
+    match: [/^(\+\d{1,3}[- ]?)?\d{10}$/, "Please enter a valid contact number"],
+  },
   createdAt: {
     type: Date,
     default: Date.now,
