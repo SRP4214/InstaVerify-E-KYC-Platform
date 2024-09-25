@@ -32,6 +32,8 @@ These services communicate via RESTful APIs, ensuring a modular, scalable, and i
   - Use OpenCV/FaceRecognition module to verify customer identity against the uploaded ID.
 - **Image Storage**:
   - Use GridFS to store customer-uploaded images securely.
+  - **CAPTCHA Integration**:
+  - Implement CAPTCHA to prevent automated bots from abusing the platform and to enhance security during sign-in/sign-up processes.
 
 ## Getting Started
 
